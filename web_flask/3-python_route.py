@@ -9,21 +9,27 @@ def hello_world():
     """should display the string “Hello HBNB!”"""
     return 'Hello HBNB!'
 
+
 @app.route("/hbnb", strict_slashes=False)
 def hello_world2():
     """should display the string “HBNB”"""
     return 'HBNB'
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def C(text):
-    """should display the string"C "followed by the value of the text variable"""
+    """should display the string"C "followed by
+    the value of the text variable"""
     return 'C ' + text.replace('_', ' ')
+
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python(text='is cool'):
-    """should display the string "Python " followed by the value of the text variable"""
+    """should display the string "Python "
+    followed by the value of the text variable"""
     return 'Python ' + text.replace('_', ' ')
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
